@@ -1,3 +1,4 @@
+bash .scripts/dualmonitor.sh &
 nitrogen --restore &
 redshift-gtk &
 dunst &
