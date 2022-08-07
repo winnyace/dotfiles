@@ -1,14 +1,14 @@
 "Winny's init.vim
+"
 "Plugins(via vim-plug)
 call plug#begin()
-Plug 'preservim/nerdtree'
 Plug 'vimlab/split-term.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neoclide/coc.nvim'
 Plug 'ap/vim-css-color'
 Plug 'mg979/vim-visual-multi'
 Plug 'alvan/vim-closetag'
-Plug 'jcherven/jummidark.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'mcchrish/nnn.vim'
 Plug 'tpope/vim-fugitive'
@@ -18,13 +18,15 @@ call plug#end()
 
 "Basic
 set number
+set relativenumber
 set smartindent
-set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
 syntax enable 
+let mapleader = " "
+colorscheme material 
 
 "Plugin settings
 "COC: <CR> for confirm completion
@@ -48,48 +50,35 @@ function! s:check_back_space() abort
 set splitbelow "for Term
 
 "split-term: default shell
-let g:split_term_default_shell = "/usr/bin/zsh"
+let g:split_term_default_shell = "/usr/bin/fish"
 
 "Binds
 "Instant init.vim
-map <C-S-i> :e! /home/ion/.config/nvim/init.vim <CR>
+nnoremap <leader>ci :e! ~/.config/nvim/init.vim <CR>
 
 "Instant PlugInstall
-map <C-A-p> :PlugInstall <CR>
+nnoremap <leader>cp :PlugInstall <CR>
 
 "Instant coc-marketplace
-map <C-A-o> :CocList marketplace <CR>
+nnoremap <leader>cm :CocList marketplace <CR>
 
 "Save
-map <C-s> :w! <CR>
-imap <C-s> <ESC> :w! <CR>
+nnoremap <leader>s :w! <CR>
 
 "fzf
-map <C-f> :FZF <CR>
-imap <C-f> <ESC> :FZF <CR>
+nnoremap <leader>f :FZF ~/Documents/Projects <CR>
 
 "NNN
-map <C-A-f> :NnnPicker ~/Documents/Projects <CR>
-imap <C-A-f> :NnnPicker ~/Documents/Projects <CR>
-
-"Instant VTerm
-map <C-t> :VTerm <CR>
+nnoremap <leader>mf :NnnPicker ~/Documents/Projects <CR>
 
 "Rust run with Cargo
-autocmd FileType rust map eF9> :exec ':Term cargo run "#"' <CR>
-autocmd FileType rust imap <F9> :exec ':Term cargo run "#"' <CR>
+autocmd FileType rust nnoremap <buffer> <leader>r :exec ':Term cargo run "#"' <CR>
 
 "C++ compile
-autocmd FileType cpp map <buffer> <F9> :exec ':Term g++ "#" -o #<' <CR>
-autocmd FileType cpp imap <buffer> <F9> <ESC> :exec ':Term g++ "#" -o #<' <CR>
+autocmd FileType cpp nnoremap <buffer> <leader>c :exec ':Term clang++ "#" -o #<' <CR>
 
 "C++ run file
-autocmd FileType cpp map <buffer> <F5> :Term './#<' <CR>
-autocmd FileType cpp imap <buffer> <F5> <ESC> :Term ./#<' <CR>
+autocmd FileType cpp nnoremap <buffer> <leader>r :Term './#<' <CR>
 
 "Python run file
-autocmd FileType python map <buffer> <F5> :exec':Term python3 #'<CR>
-autocmd FileType python imap <buffer> <F5> :exec':Term python3 #'<CR>
-
-autocmd FileType typescript map <buffer> <F5> :exec':Term ts-node #'<CR>
-autocmd FileType typescript imap <buffer> <F5> :exec':Term ts-node #'<CR>
+autocmd FileType python nnoremap <buffer> <leader>r :Term python3  # <CR>
