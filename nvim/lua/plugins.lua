@@ -47,8 +47,11 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use ('vim-airline/vim-airline')
-    use ('Yggdroot/indentLine')
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use "lukas-reineke/indent-blankline.nvim"
     use ('vimlab/split-term.vim')
 
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
@@ -65,6 +68,13 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
-    use ('Shatur/neovim-ayu')
     use { "catppuccin/nvim", as = "catppuccin" }
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    
+    use 'm4xshen/autoclose.nvim'
+
 end)
