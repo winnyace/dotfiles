@@ -1,3 +1,23 @@
+add_newline = false
+
+[username]
+format = '[$user]($style)@'
+show_always = true
+disabled = false
+style_user = 'bold'
+style_root = 'bold red'
+
+[directory]
+truncation_length = 8
+
+[line_break]
+disabled = false 
+
+[hostname]
+ssh_only = false
+style = 'bold'
+format = '[$ssh_symbol$hostname]($style) '
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
@@ -6,6 +26,8 @@ format = '\[[$symbol($version)]($style)\]'
 
 [c]
 format = '\[[$symbol($version(-$name))]($style)\]'
+commands = [['clang','--version']]
+symbol = " "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -96,6 +118,7 @@ format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 [lua]
 format = '\[[$symbol($version)]($style)\]'
+symbol = " "
 
 [memory_usage]
 format = '\[$symbol[$ram( | $swap)]($style)\]'
@@ -144,6 +167,7 @@ format = '\[[$symbol($version)]($style)\]'
 
 [python]
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+symbol = " "
 
 [raku]
 format = '\[[$symbol($version-$vm_version)]($style)\]'
@@ -156,6 +180,7 @@ format = '\[[$symbol($version)]($style)\]'
 
 [rust]
 format = '\[[$symbol($version)]($style)\]'
+symbol = ""
 
 [scala]
 format = '\[[$symbol($version)]($style)\]'
@@ -175,9 +200,6 @@ format = '\[[$symbol$workspace]($style)\]'
 [time]
 format = '\[[$time]($style)\]'
 
-[username]
-format = '\[[$user]($style)\]'
-
 [vagrant]
 format = '\[[$symbol($version)]($style)\]'
 
@@ -189,3 +211,4 @@ format = '\[[$symbol($version)]($style)\]'
 
 [solidity]
 format = '\[[$symbol($version)]($style)\]'
+
