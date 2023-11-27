@@ -1,6 +1,12 @@
 # Winny's config.fish
 
+#Starship startup
 starship init fish | source
+
+#Removing the greeting message from fish
+function fish_greeting
+    clear
+end
 
 # Aliases
 # icat(only with kitty)

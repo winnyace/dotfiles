@@ -9,7 +9,10 @@ vim.cmd("nmap <silent> <leader>wj :wincmd j<CR>")
 vim.cmd("nmap <silent> <leader>wk :wincmd k<CR>")
 
 vim.cmd("autocmd FileType cpp nnoremap <buffer> <leader>r :Term './#<' <CR>")
-vim.cmd("autocmd FileType cpp nnoremap <buffer> <leader>c :make %< <CR>")
+vim.cmd("autocmd FileType cpp nnoremap <buffer> <leader>c :Term clang++ # -o #< <CR>")
+
+vim.cmd("autocmd FileType c nnoremap <buffer> <leader>r :Term './#<' <CR>")
+vim.cmd("autocmd FileType c nnoremap <buffer> <leader>c :Term clang # -o #< <CR>")
 
 vim.cmd("autocmd FileType rust nnoremap <buffer> <leader>r :Term cargo run <CR>")
 vim.cmd("autocmd FileType rust nnoremap <buffer> <leader>c :Term cargo check <CR>")

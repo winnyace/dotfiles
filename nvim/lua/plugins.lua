@@ -8,12 +8,11 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use ('NLKNguyen/papercolor-theme')
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use ('mbbill/undotree')
     use ('tpope/vim-fugitive')
@@ -47,10 +46,12 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
     use "lukas-reineke/indent-blankline.nvim"
     use ('vimlab/split-term.vim')
 
@@ -68,13 +69,11 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
+
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-    
-    use 'm4xshen/autoclose.nvim'
-
 end)
