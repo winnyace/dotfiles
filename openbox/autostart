@@ -1,6 +1,0 @@
-bash .scripts/dualmonitor.sh &
-nitrogen --restore &
-redshift-gtk &
-dunst &
-xfce4-clipman &
-xfce4-panel &

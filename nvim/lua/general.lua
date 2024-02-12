@@ -14,7 +14,7 @@ vim.opt.undofile = true
 
 vim.opt.smartindent = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 25
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
