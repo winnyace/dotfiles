@@ -21,7 +21,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export SPLIT='v'
 
 # Theme related
-export BAT_THEME="Catppuccin-latte"
+export BAT_THEME="Catppuccin Latte"
 
 # Back when I used XFCE4 as my DE:
 #export QT_STYLE_OVERRIDE=kvantum
