@@ -1,3 +1,3 @@
-# dotfiles
+# These are outdated
 
-I really, **really** should have done this when I first created my GitHub account.
+These dotfiles are outdated.
